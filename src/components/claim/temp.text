@@ -1,0 +1,16 @@
+policyNo
+policyHolderName
+currentStatusId
+statusAtEvent
+isAccepted
+isFreezed
+isSmsSend
+productName
+lifeAssured
+jointAssured
+liabStateInEventDate
+liabStateNow
+actualValidate
+endDate
+isAccepteds
+notifiedAmounts
