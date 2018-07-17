@@ -71,8 +71,8 @@ export default {
         console.log(data);
         this.tableData = data;
 
-        let mar = data.filter(x => x.type === "major");
-        let sec = data.filter(x => x.type === "secondary");
+        let mar = data.filter(m => m.type === "major");
+        let sec = data.filter(s => s.type === "secondary");
         let { major, secondary } = this.detailForm;
         if (mar.length) {
           major.isAccepteds = mar[0].isAccepteds;
