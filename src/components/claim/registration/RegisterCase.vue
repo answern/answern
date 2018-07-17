@@ -17,7 +17,7 @@
           </el-col>
         </el-row>
         <v-collapse :accordion="true">
-          <v-collapse-item title="被保险人信息">
+          <v-collapse-item title="被保险人信息" class="icon-search">
             <el-row :gutter="10">
               <el-col :span="6">
                 <el-form-item label="被保险人姓名">
@@ -400,6 +400,7 @@ export default {
 </script>
 
 <style scoped>
+@import '../../../styles/style.css';
 .el-form-item__label {
   font-size: 12px;
 }
