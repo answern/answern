@@ -12,7 +12,7 @@
         </v-collapse-item>
         <!--理赔信息-->
         <v-collapse-item title="理赔信息">
-          <v-grid>
+          <v-grid :col="3">
             <v-form-item label="被保人姓名">
               <v-input v-model="caseForm.accierName" />
             </v-form-item>

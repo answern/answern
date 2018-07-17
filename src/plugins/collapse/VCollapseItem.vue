@@ -60,6 +60,7 @@ $paddingLeft: 20;
 .v-collapse .el-collapse-item{
   border: 1px solid #ebeef5;
   padding-bottom:10px;
+
 }
 
 </style>
