@@ -1,5 +1,5 @@
 <template>
-  <el-table-column :property="prop" :label="label" :width="width" :align="align" :show-overflow-tooltip="tip">
+  <el-table-column class="v-table" :property="prop" :label="label" :width="width" :align="align" :show-overflow-tooltip="tip">
   </el-table-column>
 </template>
 
@@ -30,9 +30,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.el-table th {
-  background: red;
-}
-</style>

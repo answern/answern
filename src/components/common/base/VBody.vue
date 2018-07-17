@@ -21,4 +21,11 @@ export default {
 </script>
 
 <style scoped>
+.v-body .el-main{
+  padding:0;
+}
+.el-main{ 
+  margin-top:10px;
+}
 </style>
+

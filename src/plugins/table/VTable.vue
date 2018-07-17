@@ -1,14 +1,16 @@
 <template>
-  <el-table ref="__reftable__" row-class-name="row-class" :data="data" v-loading="loading" :border="border" style="width: 100%" @selection-change="handleSelectionChange" @expand-change="expandRow">
-    <slot name="expand"></slot>
-    <el-table-column v-if="type === `check`" type="selection" :align="align" :width="width" />
-    <el-table-column v-if="type === `radio`" label="选择" :align="align" :width="width">
-      <template slot-scope="scope">
-        <el-radio v-labelHide v-model="choice" :label="scope.$index" @change.native="getCurrentRow(scope.row)"></el-radio>
-      </template>
-    </el-table-column>
-    <slot></slot>
-  </el-table>
+  <div class="v-table">
+    <el-table ref="__reftable__" row-class-name="row-class" :data="data" v-loading="loading" :border="border" style="width: 100%" @selection-change="handleSelectionChange" @expand-change="expandRow">
+      <slot name="expand"></slot>
+      <el-table-column v-if="type === `check`" type="selection" :align="align" :width="width" />
+      <el-table-column v-if="type === `radio`" label="选择" :align="align" :width="width">
+        <template slot-scope="scope">
+          <el-radio v-labelHide v-model="choice" :label="scope.$index" @change.native="getCurrentRow(scope.row)"></el-radio>
+        </template>
+      </el-table-column>
+      <slot></slot>
+    </el-table>
+  </div>
 </template>
 
 <script>
@@ -63,8 +65,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.row-class {
-  background: red;
-}
-</style>
+

@@ -89,7 +89,7 @@
           </el-row>
 
         </v-collapse-item>
-        <v-collapse-item title="任务搜索列表" name="taskCollection">
+        <v-collapse-item title="任务搜索列表" name="taskCollection" >
           <!-- table list-->
           <v-table :data="tableData" :loading="loading">
             <v-table-column v-bind="col" v-for="(col, index) in tp1" :key="index" />

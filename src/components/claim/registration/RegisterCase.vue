@@ -411,3 +411,12 @@ export default {
   margin: 10px 5px;
 }
 </style>
+
+<style>
+.el-radio__label {
+  display: none;
+}
+.flex-direction column > .el-dialog__body {
+  overflow: auto;
+}
+</style>

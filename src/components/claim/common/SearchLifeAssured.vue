@@ -161,4 +161,3 @@ export default {
 .pagination {
   float: right;
 }
-</style>

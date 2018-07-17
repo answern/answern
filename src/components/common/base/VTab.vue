@@ -1,10 +1,12 @@
 <template>
-  <el-tabs v-if="openedTabList.length" v-model="activeTab" type="border-card" closable @tab-click="changeTab" @tab-remove="removeTab">
-    <el-tab-pane v-for="tab in openedTabList" :key="tab.tabname" :label="tab.title" :name="tab.tabname">
+  <div class="v-tabs">
+    <el-tabs v-if="openedTabList.length" v-model="activeTab" type="border-card" closable @tab-click="changeTab" @tab-remove="removeTab">
+      <el-tab-pane v-for="tab in openedTabList" :key="tab.tabname" :label="tab.title" :name="tab.tabname">
 
-    </el-tab-pane>
-    <slot></slot>
-  </el-tabs>
+      </el-tab-pane>
+      <slot></slot>
+    </el-tabs>
+  </div>
 </template>
 
 <script>
@@ -61,3 +63,19 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import '../../../styles/mixin.scss';
+ .v-tabs .el-tabs{ 
+    background:$body-bg;
+    border:none;
+    box-shadow:none;
+}
+.v-tabs .el-tabs--border-card{
+  background: $body-bg;
+  box-shadow: none;
+  border: 0;
+  border-top:1px solid #ebeef5;
+}
+</style>
+

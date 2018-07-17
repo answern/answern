@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
 }
+:root{ background:#f3f3f4;}
 html,
 body {
   //overflow: hidden !important;
@@ -49,4 +50,60 @@ dt {
 dd {
   margin-left: 0;
 }
+//collapse
+.v-collapse .el-collapse-item__header{
+  height:35px;
+  line-height: 35px;
+}
+.v-collapse .el-collapse-item__arrow{
+  line-height: 35px;
+}
 
+//sider
+.v-sider .el-menu-item:hover,
+.el-menu-item:focus,
+.el-submenu__title:hover {
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+//v-tab
+.v-tabs .el-tabs--border-card>.el-tabs__content{
+  padding:10px;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header{
+  background:#fafafa;
+  border-bottom: 2px solid #2f4050;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    color: #ffffff;
+    background-color: #2f4050;
+    border-right-color: #ebeef5;
+    border-left-color: #ebeef5;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item{
+  border-right-color: #ebeef5;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover{
+  color:#fff;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-active):hover{
+  color:#4878ca;
+}
+.v-tabs .el-tabs--border-card .el-icon-close:before{
+  padding:1px;
+  background:#c0c4cc;
+  border-radius:50%;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active .el-icon-close:before{
+  color:#000;
+}
+.v-tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item .el-icon-close:before{
+  color:#fff;
+}
+
+//table
+.v-table .el-table th {
+  background:#f6f7fb;
+  height:40px;
+}
