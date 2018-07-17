@@ -21,7 +21,7 @@ export default {
     }
     return (
       <el-form-item prop={prop}>
-        <div class={form-item-label}>{label}</div>
+        <div >{label}</div>
         {vnodes}
       </el-form-item>
     )

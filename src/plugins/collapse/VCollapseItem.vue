@@ -46,7 +46,7 @@ $paddingLeft: 15;
   background: pink;
 }
 .v-collapse-item-body {
-  background: gainsboro;
+  background: blue;
   @include paddingLeft(15);
 }
 </style>
