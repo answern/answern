@@ -333,8 +333,7 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "../../../styles/style.css";
+<style lang='scss' scoped>
 .el-form-item__label {
   font-size: 12px;
 }
