@@ -7,170 +7,106 @@
 
     <!-- 表单信息 -->
     <div>
-      <el-form ref="form" :model="form">
-        <el-row :gutter="10">
-          <el-col :span="6">
-
-            <span>案件号</span>
-            <v-input v-model="form.caseNo" :readonly="true" />
-
-          </el-col>
-        </el-row>
+      <el-form ref="regCaseForm" :model="regCaseForm">
+        <v-grid>
+          <v-form-item label="案件号">
+            <v-input v-model="regCaseForm.caseNo" :readonly="true" />
+          </v-form-item>
+        </v-grid>
         <v-collapse :accordion="true">
-          <v-collapse-item title="被保险人信息" class="icon-search">
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="被保险人姓名">
-                  <v-input v-model="form.assuredName"></v-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="性别">
-                  <el-input v-model="form.assuredGender" readonly></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="证件类型">
-                  <el-input v-model="form.assuredCertiType" readonly></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="证件号码">
-                  <el-input v-model="form.assuredCertiCode" readonly></el-input>
-                </el-form-item>
-              </el-col>
-            </el-row>
+          <!-- 被保险人信息 -->
+          <v-collapse-item title="被保险人信息">
+            <v-grid>
+              <v-form-item label="被保险人姓名">
+                <v-input v-model="regCaseForm.assuredName" />
+              </v-form-item>
+              <v-form-item label="性别">
+                <v-input v-model="regCaseForm.assuredGender" :readonly="true" />
+              </v-form-item>
+              <v-form-item label="证件类型">
+                <v-input v-model="regCaseForm.assuredCertiType" :readonly="true" />
+              </v-form-item>
+              <v-form-item label="证件号码">
+                <v-input v-model="regCaseForm.assuredCertiCode" :readonly="true" />
+              </v-form-item>
+            </v-grid>
           </v-collapse-item>
-
-          <el-collapse-item title="理赔信息">
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="出事日期*">
-
-                  <el-date-picker v-model="form.accidentTime" type="date" placeholder="选择日期" value-format="timestamp">
-                  </el-date-picker>
-
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="事故地点*">
-                  <el-input v-model="form.eventLocation"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="理赔案件性质*">
-                  <claim-nature v-model="form.claimNature"></claim-nature>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="理赔案件类型*">
-                  <claim-type v-model="form.claimType" />
-                </el-form-item>
-              </el-col>
-            </el-row>
-
-            <el-row :gutter="10">
-              <el-col :span="12">
-                <el-form-item label="事故详情*">
-                  <el-input type="textarea" v-model="form.eventDetails" resize="none"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="案件等级">
-                  <case-level v-model="form.caseLevel" />
-                </el-form-item>
-              </el-col>
-            </el-row>
-          </el-collapse-item>
-
-          <el-collapse-item title="报案人信息">
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="报案日期*">
-                  <el-input v-model="form.kkk" disabled></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="报案人姓名">
-                  <el-input v-model="form.lll"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="与被保险人的关系">
-                  <el-input v-model="form.mmm"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="报案方式">
-                  <el-input v-model="form.nnn"></el-input>
-                </el-form-item>
-              </el-col>
-            </el-row>
-
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="手　机">
-                  <el-input v-model="form.ooo" disabled></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="联系电话">
-                  <el-input v-model="form.ppp"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="邮件地址">
-                  <el-input v-model="form.qqq"></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="邮政编码">
-                  <el-input v-model="form.rrr"></el-input>
-                </el-form-item>
-              </el-col>
-            </el-row>
-
-            <el-row :gutter="10">
-              <el-col :span="12">
-                <el-form-item label="地 址">
-                  <el-input v-model="form.sss"></el-input>
-                </el-form-item>
-              </el-col>
-            </el-row>
-          </el-collapse-item>
-
-          <el-collapse-item title="理赔备注">
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="理赔员*">
-                  <el-input v-model="form.ttt"></el-input>
-                </el-form-item>
-              </el-col>
-
-            </el-row>
-
-            <el-row :gutter="10">
-              <el-col :span="6">
-                <el-form-item label="历史备注">
-                  <el-input v-model="form.uuu" disabled></el-input>
-                </el-form-item>
-              </el-col>
-              <el-col :span="6">
-                <el-form-item label="备注">
-                  <el-input v-model="form.vvv"></el-input>
-                </el-form-item>
-              </el-col>
-
-            </el-row>
-
-          </el-collapse-item>
+          <!-- 理赔信息 -->
+          <v-collapse-item title="理赔信息">
+            <v-grid>
+              <v-form-item label="出事日期*">
+                <el-date-picker v-model="regCaseForm.accidentTime" type="date" placeholder="选择日期" value-format="timestamp"></el-date-picker>
+              </v-form-item>
+              <v-form-item label="事故地点*">
+                <v-input v-model="regCaseForm.eventLocation" />
+              </v-form-item>
+              <v-form-item label="理赔案件性质*">
+                <claim-nature v-model="regCaseForm.claimNature" />
+              </v-form-item>
+              <v-form-item label="理赔案件类型*">
+                <claim-type v-model="regCaseForm.claimType" />
+              </v-form-item>
+              <v-form-item label="事故详情*">
+                <el-input type="textarea" v-model="regCaseForm.eventDetails" resize="none"></el-input>
+              </v-form-item>
+              <v-form-item label="案件等级">
+                <case-level v-model="regCaseForm.caseLevel" />
+              </v-form-item>
+            </v-grid>
+          </v-collapse-item>
+          <!-- 报案人信息 -->
+          <v-collapse-item title="报案人信息">
+            <v-grid>
+              <v-form-item label="报案日期*">
+                <v-input v-model="regCaseForm.kkk" disabled />
+              </v-form-item>
+              <v-form-item label="报案人姓名">
+                <v-input v-model="regCaseForm.lll" />
+              </v-form-item>
+              <v-form-item label="与被保险人的关系">
+                <v-input v-model="regCaseForm.mmm" />
+              </v-form-item>
+              <v-form-item label="报案方式">
+                <v-input v-model="regCaseForm.nnn" />
+              </v-form-item>
+              <v-form-item label="手　机">
+                <v-input v-model="regCaseForm.ooo" disabled />
+              </v-form-item>
+              <v-form-item label="联系电话">
+                <v-input v-model="regCaseForm.ppp" />
+              </v-form-item>
+              <v-form-item label="邮件地址">
+                <v-input v-model="regCaseForm.qqq" />
+              </v-form-item>
+              <v-form-item label="邮政编码">
+                <v-input v-model="regCaseForm.rrr" />
+              </v-form-item>
+            </v-grid>
+            <v-grid :col="2">
+              <v-form-item label="地 址">
+                <v-input v-model="regCaseForm.sss" />
+              </v-form-item>
+            </v-grid>
+          </v-collapse-item>
+          <!-- 理赔备注 -->
+          <v-collapse-item title="理赔备注">
+            <v-grid>
+              <v-form-item label="理赔员*">
+                <v-input v-model="regCaseForm.ttt" />
+              </v-form-item>
+              <v-form-item label="历史备注">
+                <v-input v-model="regCaseForm.uuu" disabled />
+              </v-form-item>
+              <v-form-item label="备注">
+                <v-input v-model="regCaseForm.vvv" />
+              </v-form-item>
+            </v-grid>
+          </v-collapse-item>
         </v-collapse>
-
       </el-form>
 
       <div class="button-group">
-
-        <template v-if="!form.caseNo.length">
+        <template v-if="!regCaseForm.caseNo.length">
           <el-button type="primary" @click="onSubmit()">提交</el-button>
           <el-button type="primary">延迟报案</el-button>
         </template>
@@ -187,9 +123,7 @@
     <v-confirm title="被保险人" :show.sync="show" @confirm="confirm" :width="80">
       <search-life-assured :assuredForm="assuredForm" :searchedAssured="searchedAssured" :initialization="show" />
     </v-confirm>
-
   </div>
-
 </template>
 
 <script>
@@ -225,7 +159,7 @@ export default {
         assured: ""
       },
       searchedAssured: {},
-      form: {
+      regCaseForm: {
         caseNo: "",
         assuredName: "",
         assuredGender: "",
@@ -266,18 +200,18 @@ export default {
       let value = await this.selLifeAssured();
       loading.close();
       console.log(value);
-      Object.assign(this.form, value);
+      Object.assign(this.regCaseForm, value);
       this.show = false;
     },
     async acceptanceEntity() {
-      let caseNo = this.form.caseNo;
+      let caseNo = this.regCaseForm.caseNo;
       let loading = $loading.call(this);
       let value = await api.acceptanceEntity(caseNo);
       loading.close();
       this.$router.push({ name: "acceptanceEntity", params: { caseNo } });
     },
     goOnRegistering() {
-      this.form.caseNo = "";
+      this.regCaseForm.caseNo = "";
     },
     /**
      * 案件提交
@@ -384,7 +318,7 @@ export default {
       let caseNo = await api.registerCase(caseinfo);
       if (caseNo) {
         console.log(caseNo);
-        this.form.caseNo = caseNo;
+        this.regCaseForm.caseNo = caseNo;
         $success.call(this, { message: "报案成功" });
         //debugger;
         //this.$router.push({ name: "acceptanceEntity", params: { caseNo } });
@@ -400,7 +334,7 @@ export default {
 </script>
 
 <style scoped>
-@import '../../../styles/style.css';
+@import "../../../styles/style.css";
 .el-form-item__label {
   font-size: 12px;
 }
