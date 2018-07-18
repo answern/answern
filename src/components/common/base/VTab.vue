@@ -69,7 +69,7 @@ export default {
 .v-tabs {
   .el-tabs,
   .el-tabs--border-card {
-    background: $body-bg;
+    background:none;
     border-bottom: 0;
     box-shadow: none;
   }

@@ -18,7 +18,6 @@ export default {
 </script>
 <style scoped>
 .v-breadcrumb {
-  background: #fafafa;
   padding: 10px 20px;
   margin-bottom: 10px;
 }
