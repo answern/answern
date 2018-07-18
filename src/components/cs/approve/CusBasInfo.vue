@@ -26,7 +26,6 @@
         <button @click="showDialog()">open</button>
         <input v-model="policycode" />
         <v-confirm title="被保险人" :show.sync="show" @confirm="confirm">
-          <stp />
         </v-confirm>
       </v-collapse-item>
     </v-collapse>
@@ -90,6 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/mixin.scss';
 $red: #f90;
 .page {
   background: $red;

@@ -24,8 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/mixin.scss';
-* {
-  padding: 0px;
-}
+* {padding: 0px;}
 .v-silder{ height:100%;background: $sider-bg;}
 </style>

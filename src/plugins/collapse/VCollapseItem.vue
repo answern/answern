@@ -32,36 +32,29 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../styles/mixin.scss";
-
-@mixin paddingLeft($left) {
-  padding-left: $left + px;
-}
-$paddingLeft: 20;
 .title-font {
   font-weight: 600;
-  font-size: 14px;
+  @include sc(14px, "");
 }
 .v-collapse {
-  padding-bottom: 10px;
+  .v-collapse-item-body {
+    padding: 10px 20px;
+    margin-bottom: -25px;
+    background: #ffffff;
+  }
+  
+  .el-collapse-item {
+    @include border(#ebeef5);
+    margin-top: 10px;
+  }
 }
 .v-collapse-item-header {
   height: 35px;
   line-height: 35px;
   background: #fafafa;
   box-sizing: border-box;
-  padding-left: $paddingLeft + px;
+  padding-left: 20px;
   border-bottom: 1px solid #ebeef5;
 }
-.v-collapse .v-collapse-item-body {
-  padding: 10px 20px;
-  margin-bottom: -25px;
-  background: #ffffff;;
-}
-.v-collapse .el-collapse-item{
-  border: 1px solid #ebeef5;
-  padding-bottom:10px;
-
-}
-
 </style>
 

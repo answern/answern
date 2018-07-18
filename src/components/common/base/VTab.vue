@@ -65,17 +65,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/mixin.scss';
- .v-tabs .el-tabs{ 
-    background:$body-bg;
-    border:none;
-    box-shadow:none;
-}
-.v-tabs .el-tabs--border-card{
-  background: $body-bg;
-  box-shadow: none;
-  border: 0;
-  border-top:1px solid #ebeef5;
+@import "../../../styles/mixin.scss";
+.v-tabs {
+  .el-tabs,
+  .el-tabs--border-card {
+    background: $body-bg;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+  .el-tabs--border-card {
+    border-top: 1px solid #ebeef5;
+  }
 }
 </style>
 

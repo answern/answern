@@ -20,8 +20,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-.el-collapse{
-  border:0;
-}
-</style>

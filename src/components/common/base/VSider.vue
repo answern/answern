@@ -67,34 +67,37 @@ export default {
 };
 </script>
 
-<style  lang="scss" scoped>
-@import "src/styles/mixin.scss";
+<style lang="scss" scoped>
+@import "../../../styles/mixin.scss";
 .v-logo {
   width: 200px;
   height: 155px;
   border-bottom: 1px solid #1a2c3a;
-  background: url("../../../assets/images/menu-logo.png") no-repeat center center;
+  @include bimg("../../../assets/images/sider/menu-logo.png");
+  background-position: center center;
+  background-size: 126px 98px;
 }
 .v-logo-folding {
   height: 65px;
   border-bottom: 1px solid #1a2c3a;
-  background: url("../../../assets/images/menu-logo-mini.png") no-repeat center
-    center;
+  @include bimg("../../../assets/images/sider/menu-logo-mini.png");
+  background-position: center center;
+  background-size: 35px 18px;
 }
-.v-sider .el-menu-vertical-demo:not(.el-menu--collapse) {
-	
-  width: 200px;
-	height:100vh;
-  min-height: 400px;
-  background: $sider-bg;
-
-}
-.v-sider span {
-  color: #a7b1c2;
-  font-size: 14px;
-}
-.v-sider .el-menu-item-group {
-  background: $sider-second-bg;
+.v-sider {
+  span {
+    color: #a7b1c2;
+    font-size: 14px;
+  }
+  .el-menu-item-group {
+    background: $sider-second-bg;
+  }
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    height: 100vh;
+    min-height: 400px;
+    background: $sider-bg;
+  }
 }
 .el-menu {
   background: $sider-bg;

@@ -70,7 +70,8 @@ dd {
     line-height: 35px;
   }
 }
-
+.el-collapse {border: 0;}
+.el-collapse-item__wrap{border-bottom:0;}
 //Sider background color across the color 
 .v-sider {
   .el-menu-item:hover,
