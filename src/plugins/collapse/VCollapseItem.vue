@@ -38,7 +38,7 @@ export default {
 }
 .v-collapse {
   .v-collapse-item-body {
-    padding: 10px 20px;
+    padding:0 0 20px 0;
     margin-bottom: -25px;
     background: #ffffff;
   }

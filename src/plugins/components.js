@@ -9,6 +9,7 @@ import VInput from './input/VInput.vue';
 import VGrid from './layout/_Grid';
 import VFormItem from './form/_FormItem';
 import VSwitch from './switch/VSwitch';
+import VButtonGroup from './layout/VButtonGroup';
 
 export default (Vue) => {
   Vue.component("VCollapse", VCollapse);
@@ -22,5 +23,6 @@ export default (Vue) => {
   Vue.component("VTableColumn", VTableColumn);
   Vue.component("VFormItem", VFormItem);
   Vue.component("VSwitch", VSwitch);
+  Vue.component("VButtonGroup", VButtonGroup);
 }
 
