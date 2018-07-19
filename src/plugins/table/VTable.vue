@@ -1,11 +1,11 @@
 <template>
   <div class="v-table">
-    <el-table ref="__reftable__" row-class-name="row-class" :data="data" v-loading="loading" :border="border" style="width: 100%" @selection-change="handleSelectionChange" @expand-change="expandRow">
+    <el-table ref="__reftable__" :row-class-name="setRowCls" :header-row-class-name="setHeaderCls" :data="data" v-loading="loading" :border="border" style="width: 100%" @selection-change="handleSelectionChange" @expand-change="expandRow">
       <slot name="expand"></slot>
       <el-table-column v-if="type === `check`" type="selection" :align="align" :width="width" />
       <el-table-column v-if="type === `radio`" label="选择" :align="align" :width="width">
         <template slot-scope="scope">
-          <el-radio v-labelHide v-model="choice" :label="scope.$index" @change.native="getCurrentRow(scope.row)"></el-radio>
+          <el-radio v-hideLab v-model="choice" :label="scope.$index" @change.native="getCurrentRow(scope.row)"></el-radio>
         </template>
       </el-table-column>
       <slot></slot>
@@ -16,7 +16,7 @@
 <script>
 export default {
   directives: {
-    labelHide(el) {
+    hideLab(el) {
       el.lastChild.style.display = "none";
     }
   },
@@ -44,6 +44,12 @@ export default {
     };
   },
   methods: {
+    setHeaderCls(val) {
+      return "header-cls";
+    },
+    setRowCls({ row, rowIndex }) {
+      return "";
+    },
     expandRow(row, expandedRows) {
       this.$emit("expand-change", { row, expandedRows });
     },
@@ -65,4 +71,12 @@ export default {
 };
 </script>
 
+<style>
+.el-table .header-cls th{
+  background: oldlace;
+  font-size: 16px;
+  font-weight: 600;
+  height: 40px;
+}
+</style>
 
