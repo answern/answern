@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- 搜查按钮 -->
-    <div class="button-group-default">
-      <el-button type="primary" @click="open">搜索被保险人</el-button>
-    </div>
-
     <!-- 表单信息 -->
     <div>
       <el-form ref="regCaseForm" :model="regCaseForm">
@@ -12,22 +7,25 @@
           <v-form-item label="案件号">
             <v-input v-model="regCaseForm.caseNo" :readonly="true" />
           </v-form-item>
+          <v-form-item :pair="true">
+            <el-button type="primary" @click="open">搜索被保险人</el-button>
+          </v-form-item>
         </v-grid>
         <v-collapse :accordion="true">
           <!-- 被保险人信息 -->
           <v-collapse-item title="被保险人信息">
             <v-grid>
               <v-form-item label="被保险人姓名">
-                <v-input v-model="regCaseForm.assuredName" />
+                <v-input v-model="regCaseForm.assuredName" :disabled="true" />
               </v-form-item>
               <v-form-item label="性别">
-                <v-input v-model="regCaseForm.assuredGender" :readonly="true" />
+                <v-input v-model="regCaseForm.assuredGender" :disabled="true" />
               </v-form-item>
               <v-form-item label="证件类型">
-                <v-input v-model="regCaseForm.assuredCertiType" :readonly="true" />
+                <v-input v-model="regCaseForm.assuredCertiType" :disabled="true" />
               </v-form-item>
               <v-form-item label="证件号码">
-                <v-input v-model="regCaseForm.assuredCertiCode" :readonly="true" />
+                <v-input v-model="regCaseForm.assuredCertiCode" :disabled="true" />
               </v-form-item>
             </v-grid>
           </v-collapse-item>
@@ -35,7 +33,7 @@
           <v-collapse-item title="理赔信息">
             <v-grid>
               <v-form-item label="出事日期*">
-                <el-date-picker v-model="regCaseForm.accidentTime" type="date" placeholder="选择日期" value-format="timestamp"></el-date-picker>
+                <v-date-picker v-model="regCaseForm.accidentTime" />
               </v-form-item>
               <v-form-item label="事故地点*">
                 <v-input v-model="regCaseForm.eventLocation" />
@@ -43,16 +41,22 @@
               <v-form-item label="理赔案件性质*">
                 <claim-nature v-model="regCaseForm.claimNature" />
               </v-form-item>
-              <v-form-item label="理赔案件类型*">
+              <v-form-item label="理赔类型*">
                 <claim-type v-model="regCaseForm.claimType" />
               </v-form-item>
-              <v-form-item label="事故详情*">
-                <el-input type="textarea" v-model="regCaseForm.eventDetails" resize="none"></el-input>
-              </v-form-item>
-              <v-form-item label="案件等级">
-                <case-level v-model="regCaseForm.caseLevel" />
-              </v-form-item>
             </v-grid>
+            <el-row :gutter="10">
+              <el-col :span="12">
+                <v-form-item label="事故详情*">
+                  <v-textarea type="textarea" v-model="regCaseForm.eventDetails" />
+                </v-form-item>
+              </el-col>
+              <el-col :span="6">
+                <v-form-item label="案件等级">
+                  <case-level v-model="regCaseForm.caseLevel" />
+                </v-form-item>
+              </el-col>
+            </el-row>
           </v-collapse-item>
           <!-- 报案人信息 -->
           <v-collapse-item title="报案人信息">
@@ -115,7 +119,6 @@
           <el-button type="primary" @click="goOnRegistering()">继续报案</el-button>
           <el-button type="primary">文件清单</el-button>
         </template>
-
       </div>
     </div>
 

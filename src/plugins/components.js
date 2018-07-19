@@ -10,6 +10,7 @@ import VGrid from './layout/_Grid';
 import VFormItem from './form/_FormItem';
 import VSwitch from './switch/VSwitch';
 import VButtonGroup from './layout/VButtonGroup';
+import VDatePicker from './picker/VDatePicker';
 
 export default (Vue) => {
   Vue.component("VCollapse", VCollapse);
@@ -24,5 +25,6 @@ export default (Vue) => {
   Vue.component("VFormItem", VFormItem);
   Vue.component("VSwitch", VSwitch);
   Vue.component("VButtonGroup", VButtonGroup);
+  Vue.component("VDatePicker", VDatePicker);
 }
 

@@ -1,9 +1,9 @@
 <template>
-    <div class="todo">
+    <div class="v-button-group">
         <slot></slot>
     </div>
 </template>
 
 <style lang="scss" scoped>
- .todo {float:right; margin-right:20px; margin-top:10px;}
+ .v-button-group {float:right; margin-right:20px; margin-top:10px;}
 </style>

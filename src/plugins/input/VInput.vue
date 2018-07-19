@@ -1,5 +1,5 @@
 <template>
-  <el-input :value="value" :style="{width: width}" @input="$emit('input', $event)" :disabled="disabled" :readonly="readonly" />
+  <el-input :value="value" :type="type" :disabled="disabled" :readonly="readonly" v-bind="$attrs"  @input="$emit('input', $event)" :style="{width: width}" />
 </template>
 
 <script>

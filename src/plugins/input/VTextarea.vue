@@ -1,23 +1,22 @@
 <template>
-  <v-input type="textarea" :rows="2"/>
+  <v-input :value="value" :resize="resize" :rows="rows" v-bind="$attrs" :type="'textarea'" @input="$emit('input', $event)" />
 </template>
 
 <script>
+import Vue from "vue";
+
 export default {
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    readonly: {
-      type: Boolean,
-      default: false
-    },
     value: {
       type: String
     },
-    width: {
-      type: Number
+    resize: {
+      type: String,
+      default: "none"
+    },
+    rows: {
+      type: Number,
+      default: 3
     }
   }
 };
