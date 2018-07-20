@@ -10,7 +10,7 @@ export default {
     },
     gutter: {
       type: Number,
-      default: 10
+      default: 20
     }
   },
   render(h) {

@@ -13,7 +13,7 @@
         </v-grid>
         <v-collapse :accordion="true">
           <!-- 被保险人信息 -->
-          <v-collapse-item title="被保险人信息">
+          <v-collapse-item title="被保险人信息" class="v-form">
             <v-grid>
               <v-form-item label="被保险人姓名">
                 <v-input v-model="regCaseForm.assuredName" :disabled="true" />
@@ -30,7 +30,7 @@
             </v-grid>
           </v-collapse-item>
           <!-- 理赔信息 -->
-          <v-collapse-item title="理赔信息">
+          <v-collapse-item title="理赔信息"  class="v-form">
             <v-grid>
               <v-form-item label="出事日期*">
                 <v-date-picker v-model="regCaseForm.accidentTime" />
@@ -59,7 +59,7 @@
             </el-row>
           </v-collapse-item>
           <!-- 报案人信息 -->
-          <v-collapse-item title="报案人信息">
+          <v-collapse-item title="报案人信息"  class="v-form">
             <v-grid>
               <v-form-item label="报案日期*">
                 <v-input v-model="regCaseForm.kkk" disabled />
@@ -93,7 +93,7 @@
             </v-grid>
           </v-collapse-item>
           <!-- 理赔备注 -->
-          <v-collapse-item title="理赔备注">
+          <v-collapse-item title="理赔备注"  class="v-form">
             <v-grid>
               <v-form-item label="理赔员*">
                 <v-input v-model="regCaseForm.ttt" />
@@ -109,8 +109,8 @@
         </v-collapse>
       </el-form>
 
-      <div class="button-group">
-        <template v-if="!regCaseForm.caseNo.length">
+        <v-button-group>
+          <template v-if="!regCaseForm.caseNo.length">
           <el-button type="primary" @click="onSubmit()">提交</el-button>
           <el-button type="primary">延迟报案</el-button>
         </template>
@@ -119,7 +119,9 @@
           <el-button type="primary" @click="goOnRegistering()">继续报案</el-button>
           <el-button type="primary">文件清单</el-button>
         </template>
-      </div>
+        </v-button-group>
+        
+      
     </div>
 
     <!-- 弹框 -->
@@ -336,24 +338,6 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-.el-form-item__label {
-  font-size: 12px;
-}
-.button-group {
-  margin: 10px 5px;
-  float: right;
-}
-.button-group-default {
-  margin: 10px 5px;
-}
-</style>
-
-<style>
-.el-radio__label {
-  display: none;
-}
-.flex-direction column > .el-dialog__body {
-  overflow: auto;
-}
+<style lang="scss" scoped>
+.insured-information {margin-bottom: -7px;}
 </style>
