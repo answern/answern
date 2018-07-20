@@ -3,15 +3,19 @@
     <!-- 表单信息 -->
     <div>
       <el-form ref="regCaseForm" :model="regCaseForm">
-        <v-grid>
-          <v-form-item label="案件号">
-            <v-input v-model="regCaseForm.caseNo" :readonly="true" />
-          </v-form-item>
-          <v-form-item :pair="true">
-            <el-button type="primary" @click="open">搜索被保险人</el-button>
-          </v-form-item>
-        </v-grid>
+
         <v-collapse :accordion="true">
+          <v-collapse-item title="搜索被保险人" class="v-form">
+            <v-grid>
+              <v-form-item label="案件号">
+                <v-input v-model="regCaseForm.caseNo" :readonly="true" />
+              </v-form-item>
+              <v-form-item :pair="true">
+                <el-button type="primary" @click="open">搜索被保险人</el-button>
+              </v-form-item>
+            </v-grid>
+          </v-collapse-item>
+
           <!-- 被保险人信息 -->
           <v-collapse-item title="被保险人信息" class="v-form">
             <v-grid>
